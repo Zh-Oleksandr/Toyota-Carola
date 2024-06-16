@@ -53,6 +53,11 @@ public class PlayerControllerScript : MonoBehaviour
                 newhull = null;
             }
         }
+
+
+
+
+
         if (movement.car == true)
         {
             if (Input.GetKey(KeyCode.W))
@@ -77,5 +82,39 @@ public class PlayerControllerScript : MonoBehaviour
 
             }
         }
+
+
+
+
+
+        if (movement.tank == true)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                movement.TankMoveForeward();
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                movement.TankMoveBackward();
+            }
+            else
+            {
+                movement.TankSlowDown();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                movement.TankMoveRight();
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                movement.TankMoveLeft();
+
+            }
+        }
+
+
+
+
+
     }
 }

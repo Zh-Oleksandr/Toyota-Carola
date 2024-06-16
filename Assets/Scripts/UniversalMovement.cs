@@ -8,8 +8,8 @@ public class UniversalMovement : MonoBehaviour
 {
     public GameObject Controller;
 
-    public bool car = true;
-    public bool tank = false;
+    public bool car = false;
+    public bool tank = true;
     public bool other = false;
 
     public bool dead = false;
@@ -25,6 +25,11 @@ public class UniversalMovement : MonoBehaviour
 
     private Vector2 movedirection;
     private float angle = Mathf.PI * 1/2;
+
+
+
+
+
     public void CarMoveForeward()
     {
         if (speed < 0)
@@ -87,6 +92,66 @@ public class UniversalMovement : MonoBehaviour
             speed = 0;
         }
     }
+
+
+
+
+
+
+    public void TankMoveForeward()
+    {
+        if (speed < 0)
+        {
+            speed += (accel + deccel) * Time.deltaTime;
+        }
+        else if (speed < maxspeed)
+        {
+            speed += accel * Time.deltaTime;
+        }
+    }
+    public void TankMoveBackward()
+    {
+        if (speed > 0)
+        {
+            speed -= (accel + deccel) * Time.deltaTime;
+        }
+        else if (Mathf.Abs(speed) < maxspeed)
+        {
+            speed -= accel * Time.deltaTime;
+        }
+    }
+
+    public void TankMoveRight()
+    {
+        angle -= turnspeed * Time.deltaTime;
+    }
+    public void TankMoveLeft()
+    {
+            angle += turnspeed * Time.deltaTime;
+    }
+
+    public void TankSlowDown()
+    {
+
+        if (speed > 0)
+        {
+            speed -= deccel * Time.deltaTime;
+        }
+        else if (speed < 0)
+        {
+            speed += deccel * Time.deltaTime;
+        }
+        if (Mathf.Abs(speed - 0) <= 0.005)
+        {
+            speed = 0;
+        }
+    }
+
+
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
