@@ -12,10 +12,14 @@ public class UniversalMovement : MonoBehaviour
     public bool tank = false;
     public bool other = false;
 
+    public bool dead = false;
+
     public Rigidbody2D rb;
     public float maxspeed = 10f;
     public float speed = 0f;
     public float accel = 3f;
+    public float turnspeed = Mathf.PI * 1 / 3;
+
 
     public float deccel = 3f;
 
@@ -48,22 +52,22 @@ public class UniversalMovement : MonoBehaviour
     {
         if (speed > 0)
         {
-            angle -= Mathf.PI * 1 / 4 * Time.deltaTime;
+            angle -= turnspeed * Time.deltaTime;
         }
         else if (speed < 0)
         {
-            angle += Mathf.PI * 1 / 3 * Time.deltaTime;
+            angle += turnspeed * Time.deltaTime;
         }
     }
     public void CarMoveLeft()
     {
         if (speed > 0)
         {
-            angle += Mathf.PI * 1 / 4 * Time.deltaTime;
+            angle += turnspeed * Time.deltaTime;
         }
         else if (speed < 0)
         {
-            angle -= Mathf.PI * 1 / 3 * Time.deltaTime;
+            angle -= turnspeed * Time.deltaTime;
         }
     }
 
@@ -93,6 +97,30 @@ public class UniversalMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Controller == null)
+        {
+            dead = true;
+        }
+        if (dead == true && Controller != null)
+        {
+            Destroy(Controller);
+        }
+        if (dead && speed != 0)
+        {
+            if (Mathf.Abs(speed) <= 0.05)
+            {
+                speed = 0;
+            }
+            else if(speed > 0)
+            {
+                speed -= deccel * Time.deltaTime;
+            }
+            else if(speed < 0)
+            {
+                speed += deccel * Time.deltaTime;
+            }
+            
+        }
         Vector3 rotationvector = new Vector3(0, 0, angle * 180/Mathf.PI);
         Quaternion rotation = Quaternion.Euler(rotationvector);
         rb.transform.rotation = rotation;

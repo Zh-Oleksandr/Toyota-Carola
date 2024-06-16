@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2762798647733520280}
   m_Layer: 0
   m_Name: Carchasse
-  m_TagString: Untagged
+  m_TagString: Chasse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,10 +88,12 @@ MonoBehaviour:
   car: 1
   tank: 0
   other: 0
+  dead: 0
   rb: {fileID: 0}
   maxspeed: 10
   speed: 0
   accel: 3
+  turnspeed: 1.0471976
   deccel: 3
 --- !u!212 &2762798647733520280
 SpriteRenderer:
