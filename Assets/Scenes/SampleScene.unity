@@ -407,6 +407,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carchasse
       objectReference: {fileID: 0}
+    - target: {fileID: 2762798647733520260, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: car
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762798647733520260, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: tank
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2762798647733520263, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -451,5 +459,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2762798647733520280, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc060afe2fbfe2f46a975750cc640903, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
