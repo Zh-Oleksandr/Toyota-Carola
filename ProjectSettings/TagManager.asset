@@ -5,11 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Chasse
+  - Size1
+  - Size2
+  - Size3
+  - armor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Weapon
   - Water
   - UI
   - 
