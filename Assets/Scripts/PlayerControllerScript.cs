@@ -16,6 +16,7 @@ public class PlayerControllerScript : MonoBehaviour
         interactionradius = this.GetComponent<CircleCollider2D>().radius;
         movement = this.GetComponentInParent<UniversalMovement>();
         movement.Controller = this.gameObject;
+        movement.notai = true;
     }
 
 
@@ -43,14 +44,19 @@ public class PlayerControllerScript : MonoBehaviour
     {
         if (newhull != null)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
+                movement.notai = false;
                 movement.Controller = null;
                 movement = newhull.GetComponent<UniversalMovement>();
                 movement.dead = false;
+                movement.notai = true;
                 this.gameObject.transform.SetParent(newhull.transform);
                 movement.Controller = this.gameObject;
+                this.transform.position = newhull.transform.position;
                 newhull = null;
+                
+
             }
         }
 

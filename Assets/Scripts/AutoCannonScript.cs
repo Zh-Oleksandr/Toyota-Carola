@@ -6,7 +6,6 @@ public class AutoCannonScript : MonoBehaviour
 {
     public int size = 2;
     public GameObject bullet;
-    public Rigidbody2D rb;
     public void Fire()
     {
         print("bang");
@@ -14,7 +13,7 @@ public class AutoCannonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
