@@ -8,6 +8,8 @@ public class SlotScript : MonoBehaviour
     public GameObject weapon;
     public int slotsize = 2;
     public Rigidbody2D rb;
+
+    private float angle;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +20,10 @@ public class SlotScript : MonoBehaviour
     void Update()
     {
         Vector3 mousePos = Input.mousePosition; ;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        angle = (mousePos.y - rb.transform.position.y) / (mousePos.x - rb.transform.position.y) * 180/Mathf.PI;
+        Vector3 direction = new Vector3(0, 0, angle);
 
-        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        rb.transform.rotation = Quaternion.LookRotation(direction);
+        rb.transform.rotation = Quaternion.Euler(direction);
        
     }
 }
