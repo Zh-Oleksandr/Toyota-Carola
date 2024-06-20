@@ -13,6 +13,8 @@ public class UniversalMovement : MonoBehaviour
     public bool other = false;
 
     public bool dead = false;
+    public bool notai = false;
+
 
     public Rigidbody2D rb;
     public float maxspeed = 10f;
@@ -157,6 +159,7 @@ public class UniversalMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -165,6 +168,7 @@ public class UniversalMovement : MonoBehaviour
         if (Controller == null)
         {
             dead = true;
+            notai = false;
         }
         if (dead == true && Controller != null)
         {
