@@ -8,8 +8,16 @@ public class AutoCannonScript : MonoBehaviour
     public GameObject bullet;
     public void Fire()
     {
+  
         print("bang");
+
+       Instantiate(bullet);
+
     }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
