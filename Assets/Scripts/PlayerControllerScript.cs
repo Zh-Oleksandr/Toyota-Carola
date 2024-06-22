@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerControllerScript : MonoBehaviour
 {
     public UniversalMovement movement;
+    public AutoCannonScript gun;
     public GameObject newhull = null;
 
     public float interactionradius = 1;
@@ -119,7 +120,10 @@ public class PlayerControllerScript : MonoBehaviour
         }
 
 
-
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            gun.Fire();
+        }
 
 
     }
