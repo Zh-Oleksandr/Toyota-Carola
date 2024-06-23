@@ -27,6 +27,12 @@ public class AutoCannonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (this.GetComponentInParent<UniversalMovement>().notai == true)
+        {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                Fire();
+            }
+        }
     }
 }

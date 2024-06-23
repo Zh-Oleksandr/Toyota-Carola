@@ -90,6 +90,7 @@ MonoBehaviour:
   tank: 0
   other: 0
   dead: 0
+  notai: 0
   rb: {fileID: 0}
   maxspeed: 10
   speed: 0
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slots: []
+  slotpos: []
   frontarmor: {fileID: 0}
   backarmor: {fileID: 0}
-  leftarmor: {fileID: 0}
-  rightarmor: {fileID: 0}
+  sidearmor: {fileID: 0}

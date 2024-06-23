@@ -401,12 +401,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 63abbef640cbcc642bf105e270c2f3f6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 0baf0b4d36670c34b99ef0025df46841, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.3, y: 0.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -779,7 +779,7 @@ PrefabInstance:
     - target: {fileID: 2762798647733520280, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fd2149092fa605345ad18b30855d0dc9, type: 3}
+      objectReference: {fileID: 21300000, guid: b5bcdcd5eed9b174eb0548a4e962d577, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
 --- !u!4 &900428633 stripped
@@ -1160,9 +1160,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: slotpos.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: Slots.Array.data[0]
       value: 
       objectReference: {fileID: 1876179697}
+    - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: slotpos.Array.data[0].x
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2762798647733520259, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: m_Name
       value: Carchasse
@@ -1222,7 +1230,7 @@ PrefabInstance:
     - target: {fileID: 2762798647733520280, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: aeb56d324e6bc684b830b3c8855fb558, type: 3}
+      objectReference: {fileID: 21300000, guid: b5bcdcd5eed9b174eb0548a4e962d577, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
 --- !u!1 &2029382752
@@ -1354,11 +1362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2544353932141455964, guid: 0aa0374d439018043bc6c1fd05c9804c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.355
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2544353932141455964, guid: 0aa0374d439018043bc6c1fd05c9804c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.182
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2544353932141455964, guid: 0aa0374d439018043bc6c1fd05c9804c, type: 3}
       propertyPath: m_LocalPosition.z
