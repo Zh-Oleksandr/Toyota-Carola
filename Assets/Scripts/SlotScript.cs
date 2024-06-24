@@ -14,6 +14,11 @@ public class SlotScript : MonoBehaviour
     private float ydis;
     [SerializeField]
     private float angle;
+
+    public bool casemate;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,29 +28,49 @@ public class SlotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 MousPos =  Input.mousePosition;
-        Vector3 Mouse = Camera.main.ScreenToWorldPoint(MousPos);
-        xdis = Mouse.x - this.transform.position.x;
-        ydis = Mouse.y - this.transform .position.y;
 
-        angle = Mathf.Atan(ydis/xdis) * 180/Mathf.PI;
+
+
+
+        Vector3 Mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        xdis = Mouse.x - this.transform.position.x;
+        ydis = Mouse.y - this.transform.position.y;
+
+        angle = Mathf.Atan(ydis / xdis) * 180 / Mathf.PI;
         if (this.GetComponentInParent<UniversalMovement>().notai == true)
         {
-            if (xdis < 0)
+
+
+
+
+
+            if (!casemate)
             {
-                Vector3 direction = new Vector3(0, 0, 180 + angle);
-                Quaternion rotation = Quaternion.Euler(direction);
-                this.transform.rotation = rotation;
-            }
-            else
-            {
-                Vector3 direction = new Vector3(0, 0, angle);
-                Quaternion rotation = Quaternion.Euler(direction);
-                this.transform.rotation = rotation;
+
+
+                if (xdis < 0)
+                {
+                    Vector3 direction = new Vector3(0, 0, 180 + angle);
+                    Quaternion rotation = Quaternion.Euler(direction);
+                    this.transform.rotation = rotation;
+                }
+                else
+                {
+                    Vector3 direction = new Vector3(0, 0, angle);
+                    Quaternion rotation = Quaternion.Euler(direction);
+                    this.transform.rotation = rotation;
+                }
+
+
+
+
+
             }
         }
-            
-        
-       
+
+
+
+
+
     }
 }
