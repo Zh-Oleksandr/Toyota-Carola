@@ -27,14 +27,14 @@ public class MoveHit : MonoBehaviour
 
 
 
-        if (timer < Range)
+        if (timer < Range/moveSpeed)
         {
             timer += Time.deltaTime;
         }
         else
         {
             print("bullet gone");
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
 
 
