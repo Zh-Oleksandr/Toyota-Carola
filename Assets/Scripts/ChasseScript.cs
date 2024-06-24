@@ -11,7 +11,8 @@ public class ChasseScript : MonoBehaviour
 
     public GameObject frontarmor;
     public GameObject backarmor;
-    public GameObject sidearmor;
+    public GameObject leftarmor;
+    public GameObject rightarmor;
 
     // Start is called before the first frame update
     void Start()
