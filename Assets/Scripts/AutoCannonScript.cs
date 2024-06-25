@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AutoCannonScript : MonoBehaviour
 {
@@ -51,10 +52,10 @@ public class AutoCannonScript : MonoBehaviour
         }
         if (this.GetComponentInParent<UniversalMovement>().notai == true)
         {
-            if (Input.GetKey(KeyCode.Mouse0))
-            {
-                Fire();
-            }
+                if (Input.GetKey(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
+                {
+                    Fire();
+                }
         }
     }
 }
