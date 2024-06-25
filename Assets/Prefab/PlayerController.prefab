@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   newhull: {fileID: 0}
+  PopUp: {fileID: 2944822928663436496, guid: 4047890bf26fea84ab037fc6ee369e85, type: 3}
   interactionradius: 1
 --- !u!58 &-3529745801856458114
 CircleCollider2D:

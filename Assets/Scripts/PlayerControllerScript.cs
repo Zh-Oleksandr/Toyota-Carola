@@ -9,6 +9,10 @@ public class PlayerControllerScript : MonoBehaviour
     public UniversalMovement movement;
     public GameObject newhull = null;
 
+    public GameObject PopUp;
+
+    public GameObject currentPopUp;
+
     public float interactionradius = 1;
 
     void Start()
@@ -20,12 +24,35 @@ public class PlayerControllerScript : MonoBehaviour
     }
 
 
+    public void Swap()
+    {
+        if (newhull != null)
+        {
+            movement.notai = false;
+            movement.Controller = null;
+            movement = newhull.GetComponent<UniversalMovement>();
+            movement.dead = false;
+            movement.notai = true;
+            this.gameObject.transform.SetParent(newhull.transform);
+            movement.Controller = this.gameObject;
+            this.transform.position = newhull.transform.position;
+            newhull = null;
+
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Chasse")
         {
+            if (currentPopUp != null)
+            {
+                Destroy(currentPopUp);
+            }
             newhull = collision.gameObject;
+            currentPopUp = Instantiate(PopUp, newhull.transform.position - new Vector3(0f, 0f, 2f), Quaternion.Euler(0f,0f,0f));
+            currentPopUp.GetComponentInChildren<SwapScript>().playerControllerScript = this;
         }
     }
 
@@ -36,33 +63,20 @@ public class PlayerControllerScript : MonoBehaviour
             if (Vector3.Distance(this.transform.position, newhull.transform.position) > interactionradius)
             {
                 newhull = null;
+                if (currentPopUp != null)
+                {
+                    Destroy(currentPopUp);
+                }
             }
         }     
     }
 
     void Update()
     {
-        if (newhull != null)
+        if (currentPopUp != null && newhull != null)
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                movement.notai = false;
-                movement.Controller = null;
-                movement = newhull.GetComponent<UniversalMovement>();
-                movement.dead = false;
-                movement.notai = true;
-                this.gameObject.transform.SetParent(newhull.transform);
-                movement.Controller = this.gameObject;
-                this.transform.position = newhull.transform.position;
-                newhull = null;
-                
-
-            }
+            currentPopUp.transform.position = newhull.transform.position - new Vector3(0f,0f,2f);
         }
-
-
-
-
 
         if (movement.car == true)
         {
