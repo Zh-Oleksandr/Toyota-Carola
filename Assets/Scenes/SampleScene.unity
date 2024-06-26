@@ -1405,6 +1405,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 4760056551832700967, guid: 9380292a59cffb94c9be8ab99385c008, type: 3}
+    - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: Slots.Array.size
       value: 1
       objectReference: {fileID: 0}
