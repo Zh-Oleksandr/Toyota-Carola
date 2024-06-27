@@ -80,11 +80,11 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (movement.car == true)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.CarMoveForeward();
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.CarMoveBackward();
             }
@@ -92,11 +92,11 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 movement.CarSlowDown();
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.CarMoveRight();
             }
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.CarMoveLeft();
 
@@ -109,11 +109,11 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (movement.tank == true)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.TankMoveForeward();
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.TankMoveBackward();
             }
@@ -121,11 +121,11 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 movement.TankSlowDown();
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.TankMoveRight();
             }
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A) && this.GetComponentInParent<ChasseScript>().inventorycheck == null)
             {
                 movement.TankMoveLeft();
 

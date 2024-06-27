@@ -14,13 +14,9 @@ public class ChasseScript : MonoBehaviour
     public UniversalMovement universalMovement;
     public GameObject inventory;
 
-    public GameObject frontarmor;
-    public GameObject backarmor;
-    public GameObject leftarmor;
-    public GameObject rightarmor;
 
     public GameObject inventorycheck;
-    private bool inventoryopen = false;
+    public bool inventoryopen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +36,7 @@ public class ChasseScript : MonoBehaviour
             if (!inventoryopen)
             {
                 inventoryopen = true;
-                inventorycheck = Instantiate(inventory, this.transform.position - new Vector3(1f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
+                inventorycheck = Instantiate(inventory, this.transform.position - new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
             }
             else
             {
