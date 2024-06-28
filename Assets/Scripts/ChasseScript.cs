@@ -31,7 +31,7 @@ public class ChasseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && universalMovement.notai == true)
+        if (Input.GetKeyDown(KeyCode.I) && universalMovement.notai == true && this.GetComponentInChildren<PlayerControllerScript>().inventoryopen == false)
         {
             if (!inventoryopen)
             {
@@ -46,6 +46,10 @@ public class ChasseScript : MonoBehaviour
                     inventoryopen = false;
                 }
             }
+        }
+        if (inventoryopen)
+        {
+            inventorycheck.transform.position = new Vector3(this.transform.position.x - 5, this.transform.position.y, this.transform.position.z);
         }
     }
 }

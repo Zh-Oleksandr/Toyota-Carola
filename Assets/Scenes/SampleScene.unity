@@ -770,6 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06e73e9478750d4b8fd7862a75b96f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraincorrectpos: 1
 --- !u!4 &588476903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7983599273106650687, guid: 65a993adadef25c4d96eaf8ed8496ca7, type: 3}
@@ -782,6 +783,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 4760056551832700967, guid: 9380292a59cffb94c9be8ab99385c008, type: 3}
     - target: {fileID: 2198481352406131619, guid: 059d5f73e621bc645a0a84871d47cc08, type: 3}
       propertyPath: Slots.Array.size
       value: 1

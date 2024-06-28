@@ -25,7 +25,7 @@ public class camerascript : MonoBehaviour
         if (this.GetComponentInParent<ChasseScript>().inventoryopen)
         {
             cameraincorrectpos = false;
-            this.transform.position = new Vector3(this.GetComponentInParent<ChasseScript>().inventorycheck.transform.position.x, this.GetComponentInParent<ChasseScript>().inventorycheck.transform.position.y,-10f);
+            this.transform.position = new Vector3(this.GetComponentInParent<ChasseScript>().inventorycheck.transform.position.x + 5, this.GetComponentInParent<ChasseScript>().inventorycheck.transform.position.y,-10f);
         }
         else
         {

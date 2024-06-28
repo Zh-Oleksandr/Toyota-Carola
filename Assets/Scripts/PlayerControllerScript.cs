@@ -15,6 +15,10 @@ public class PlayerControllerScript : MonoBehaviour
 
     public float interactionradius = 1;
 
+    public bool inventoryopen = false;
+
+    public GameObject thisinventory;
+    public GameObject otherinventory;
     void Start()
     {
         interactionradius = this.GetComponent<CircleCollider2D>().radius;
@@ -24,10 +28,25 @@ public class PlayerControllerScript : MonoBehaviour
     }
 
 
+    public void WeaponSwap()
+    {
+        if (newhull != null && this.GetComponentInParent<UniversalMovement>().speed == 0 && this.GetComponentInParent<ChasseScript>().inventoryopen == false)
+        {
+            inventoryopen = true;
+            this.GetComponentInParent<ChasseScript>().inventoryopen = true;
+            thisinventory = this.GetComponentInParent<ChasseScript>().inventorycheck = Instantiate(this.GetComponentInParent<ChasseScript>().inventory, this.transform.position - new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
+
+            otherinventory = newhull.GetComponent<ChasseScript>().inventorycheck = Instantiate(newhull.GetComponent<ChasseScript>().inventory, this.transform.position + new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
+        }
+    }
     public void Swap()
     {
-        if (newhull != null)
+        if (newhull != null && this.GetComponentInParent<UniversalMovement>().speed == 0)
         {
+            Destroy(thisinventory);
+            Destroy(otherinventory);
+            inventoryopen = false;
+            this.GetComponentInParent<ChasseScript>().inventoryopen = false;
             movement.notai = false;
             movement.Controller = null;
             movement = newhull.GetComponent<UniversalMovement>();
@@ -37,6 +56,7 @@ public class PlayerControllerScript : MonoBehaviour
             movement.Controller = this.gameObject;
             this.transform.position = newhull.transform.position;
             newhull = null;
+            
 
         }
     }
@@ -52,7 +72,7 @@ public class PlayerControllerScript : MonoBehaviour
             }
             newhull = collision.gameObject;
             currentPopUp = Instantiate(PopUp, newhull.transform.position - new Vector3(0f, 0f, 2f), Quaternion.Euler(0f,0f,0f));
-            currentPopUp.GetComponentInChildren<SwapScript>().playerControllerScript = this;
+            currentPopUp.GetComponent<SwapScript>().playerControllerScript = this;
         }
     }
 

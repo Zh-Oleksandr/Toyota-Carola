@@ -50,7 +50,7 @@ public class AutoCannonScript : MonoBehaviour
         {
             cooldowncheck = false;
         }
-        if (this.GetComponentInParent<UniversalMovement>().notai == true)
+        if (this.GetComponentInParent<UniversalMovement>().notai == true && this.GetComponentInParent<ChasseScript>().inventoryopen == false)
         {
                 if (Input.GetKey(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
                 {
