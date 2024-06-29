@@ -13,14 +13,14 @@ public class AutoCannonScript : MonoBehaviour
     [SerializeField] private bool cooldowncheck = false;
 
     public GameObject bullet;
+
     public void Fire()
     {
         if (cooldowncheck == false)
         {
 
 
-            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
-
+            Instantiate(bullet, transform.position, transform.rotation);
 
             Cooldown();
         }
