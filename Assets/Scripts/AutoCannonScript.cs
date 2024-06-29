@@ -18,12 +18,13 @@ public class AutoCannonScript : MonoBehaviour
         if (cooldowncheck == false)
         {
 
-            Instantiate(bullet);
+
+            Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
+
 
             Cooldown();
         }
         else return;
-        
     }
 
     public void Cooldown()
