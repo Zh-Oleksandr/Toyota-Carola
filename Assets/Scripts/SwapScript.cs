@@ -10,4 +10,20 @@ public class SwapScript : MonoBehaviour
     {
         playerControllerScript.Swap();
     }
+    public void InventoryOpen()
+    {
+        if (playerControllerScript.inventoryopen == false)
+        {
+            playerControllerScript.WeaponSwap();
+        }
+        else
+        {
+            playerControllerScript.inventoryopen = false;
+            playerControllerScript.GetComponentInParent<ChasseScript>().inventoryopen = false;
+            Destroy(playerControllerScript.otherinventory);
+            Destroy(playerControllerScript.thisinventory);
+        }
+        
+    }
+
 }

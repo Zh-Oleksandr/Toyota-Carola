@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2762798647733520262}
   - component: {fileID: 2762798647733520261}
   - component: {fileID: 2762798647733520260}
-  - component: {fileID: 2762798647733520280}
   - component: {fileID: 2198481352406131619}
+  - component: {fileID: 2762798647733520280}
   m_Layer: 0
   m_Name: Carchasse
   m_TagString: Chasse
@@ -95,8 +95,27 @@ MonoBehaviour:
   maxspeed: 10
   speed: 0
   accel: 3
-  turnspeed: 1.0471976
+  turnspeed: 1.5
   deccel: 3
+--- !u!114 &2198481352406131619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762798647733520259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b01da43495e104fa60ea6a2d9038a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slots: []
+  slotpos: []
+  thisgameobject: {fileID: 0}
+  universalMovement: {fileID: 0}
+  inventory: {fileID: 0}
+  inventorycheck: {fileID: 0}
+  inventoryopen: 0
 --- !u!212 &2762798647733520280
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -149,20 +168,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2198481352406131619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2762798647733520259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b01da43495e104fa60ea6a2d9038a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Slots: []
-  slotpos: []
-  frontarmor: {fileID: 0}
-  backarmor: {fileID: 0}
-  sidearmor: {fileID: 0}
