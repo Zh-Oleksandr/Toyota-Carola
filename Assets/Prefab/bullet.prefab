@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7710688268375609565}
   - component: {fileID: 1426681398917775538}
   - component: {fileID: 266805880707944475}
+  - component: {fileID: 1677078482}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7459536257884176178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33753088, y: 0.90898263, z: 0.09178377}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -114,5 +115,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5648d154a8e294f982cbcf128a3159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   Range: 50
+  rb: {fileID: 1677078482}
+  maxspeed: 10
+  speed: 10
+  accel: 3
+  turnspeed: 1.0471976
+  deccel: 1
+--- !u!50 &1677078482
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7459536257884176178}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

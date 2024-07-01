@@ -46,7 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0
-  bullet: {fileID: 0}
+  firerate: 10
+  firecountdown: 0
+  cooldowncheck: 0
+  bullet: {fileID: 7459536257884176178, guid: f794d3ade20e60b46b31586ab6416090, type: 3}
 --- !u!212 &-2474548484556111577
 SpriteRenderer:
   m_ObjectHideFlags: 0

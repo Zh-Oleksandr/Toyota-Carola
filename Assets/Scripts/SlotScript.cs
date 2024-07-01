@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlotScript : MonoBehaviour
@@ -12,11 +13,13 @@ public class SlotScript : MonoBehaviour
     private float xdis;
     [SerializeField]
     private float ydis;
-    [SerializeField]
-    private float angle;
+   
+    public float angle;
 
     public bool casemate;
-    
+
+
+
 
 
     // Start is called before the first frame update
