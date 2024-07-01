@@ -37,6 +37,7 @@ public class ChasseScript : MonoBehaviour
             {
                 inventoryopen = true;
                 inventorycheck = Instantiate(inventory, this.transform.position - new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
+                inventorycheck.GetComponent<InventoryScript>().originchasse = this;
             }
             else
             {

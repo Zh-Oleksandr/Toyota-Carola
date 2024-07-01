@@ -35,8 +35,10 @@ public class PlayerControllerScript : MonoBehaviour
             inventoryopen = true;
             this.GetComponentInParent<ChasseScript>().inventoryopen = true;
             thisinventory = this.GetComponentInParent<ChasseScript>().inventorycheck = Instantiate(this.GetComponentInParent<ChasseScript>().inventory, this.transform.position - new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
+            thisinventory.GetComponent<InventoryScript>().originchasse = this.GetComponentInParent<ChasseScript>();
 
             otherinventory = newhull.GetComponent<ChasseScript>().inventorycheck = Instantiate(newhull.GetComponent<ChasseScript>().inventory, this.transform.position + new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
+            otherinventory.GetComponent<InventoryScript>().originchasse = newhull.GetComponent<ChasseScript>();
         }
     }
     public void Swap()

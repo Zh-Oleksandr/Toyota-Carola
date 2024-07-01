@@ -9,7 +9,7 @@ public class MoveHit : MonoBehaviour
 {
 
 
-    public float Range = 50;
+    public float Range = 20;
     private float timer = 0;
 
 
@@ -49,7 +49,7 @@ public class MoveHit : MonoBehaviour
         else
         {
             print("bullet gone");
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
 

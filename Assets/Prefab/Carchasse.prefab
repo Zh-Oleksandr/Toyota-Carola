@@ -95,7 +95,7 @@ MonoBehaviour:
   maxspeed: 10
   speed: 0
   accel: 3
-  turnspeed: 1.0471976
+  turnspeed: 1.5
   deccel: 3
 --- !u!114 &2198481352406131619
 MonoBehaviour:
@@ -114,10 +114,8 @@ MonoBehaviour:
   thisgameobject: {fileID: 0}
   universalMovement: {fileID: 0}
   inventory: {fileID: 0}
-  frontarmor: {fileID: 0}
-  backarmor: {fileID: 0}
-  leftarmor: {fileID: 0}
-  rightarmor: {fileID: 0}
+  inventorycheck: {fileID: 0}
+  inventoryopen: 0
 --- !u!212 &2762798647733520280
 SpriteRenderer:
   m_ObjectHideFlags: 0
