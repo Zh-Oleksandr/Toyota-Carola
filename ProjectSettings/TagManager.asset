@@ -9,6 +9,7 @@ TagManager:
   - Size2
   - Size3
   - armor
+  - WeaponSlot
   layers:
   - Default
   - TransparentFX

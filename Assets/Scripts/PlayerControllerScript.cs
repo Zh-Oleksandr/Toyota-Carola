@@ -39,6 +39,7 @@ public class PlayerControllerScript : MonoBehaviour
 
             otherinventory = newhull.GetComponent<ChasseScript>().inventorycheck = Instantiate(newhull.GetComponent<ChasseScript>().inventory, this.transform.position + new Vector3(5f, 0f, 0f), Quaternion.Euler(0f, 0f, 0f));
             otherinventory.GetComponent<InventoryScript>().originchasse = newhull.GetComponent<ChasseScript>();
+            Destroy(otherinventory.GetComponent<InventoryScript>().floor);
         }
     }
     public void Swap()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,13 +15,17 @@ public class AutoCannonScript : MonoBehaviour
 
     public GameObject bullet;
 
+    public GameObject firepoint;
+
+    public bool onfloor = false;
+
     public void Fire()
     {
         if (cooldowncheck == false)
         {
 
 
-            Instantiate(bullet, transform.position, transform.rotation);
+            Instantiate(bullet, firepoint.transform.position, transform.rotation);
 
             Cooldown();
         }
@@ -51,12 +56,16 @@ public class AutoCannonScript : MonoBehaviour
         {
             cooldowncheck = false;
         }
-        if (this.GetComponentInParent<UniversalMovement>().notai == true && this.GetComponentInParent<ChasseScript>().inventoryopen == false)
+        if(!onfloor)
         {
+            if (this.GetComponentInParent<UniversalMovement>().notai == true && this.GetComponentInParent<ChasseScript>().inventoryopen == false)
+            {
                 if (Input.GetKey(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
                 {
                     Fire();
                 }
+            }
         }
+        
     }
 }
