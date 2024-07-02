@@ -11,6 +11,8 @@ public class InventoryScript : MonoBehaviour
 
     public GameObject slotgraphic;
 
+    public GameObject floor;
+
     // Start is called before the first frame update
     void Start()
     {
